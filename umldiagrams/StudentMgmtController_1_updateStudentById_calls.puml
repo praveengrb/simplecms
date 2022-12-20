@@ -1,0 +1,169 @@
+@startuml
+
+/' diagram meta data start
+config=CallConfiguration;
+{
+  "rootMethod": "s.praveen.cms.controller.StudentMgmtController#updateStudentById(long,StudentRequest)",
+  "projectClassification": {
+    "searchMode": "OpenProject", // OpenProject, AllProjects
+    "includedProjects": "",
+    "pathEndKeywords": "*.impl",
+    "isClientPath": "",
+    "isClientName": "",
+    "isTestPath": "",
+    "isTestName": "",
+    "isMappingPath": "",
+    "isMappingName": "",
+    "isDataAccessPath": "",
+    "isDataAccessName": "",
+    "isDataStructurePath": "",
+    "isDataStructureName": "",
+    "isInterfaceStructuresPath": "",
+    "isInterfaceStructuresName": "",
+    "isEntryPointPath": "",
+    "isEntryPointName": "",
+    "treatFinalFieldsAsMandatory": false
+  },
+  "graphRestriction": {
+    "classPackageExcludeFilter": "",
+    "classPackageIncludeFilter": "",
+    "classNameExcludeFilter": "",
+    "classNameIncludeFilter": "",
+    "methodNameExcludeFilter": "",
+    "methodNameIncludeFilter": "",
+    "removeByInheritance": "", // inheritance/annotation based filtering is done in a second step
+    "removeByAnnotation": "",
+    "removeByClassPackage": "", // cleanup the graph after inheritance/annotation based filtering is done
+    "removeByClassName": "",
+    "cutMappings": false,
+    "cutEnum": true,
+    "cutTests": true,
+    "cutClient": true,
+    "cutDataAccess": true,
+    "cutInterfaceStructures": true,
+    "cutDataStructures": true,
+    "cutGetterAndSetter": true,
+    "cutConstructors": true
+  },
+  "graphTraversal": {
+    "forwardDepth": 3,
+    "backwardDepth": 3,
+    "classPackageExcludeFilter": "",
+    "classPackageIncludeFilter": "",
+    "classNameExcludeFilter": "",
+    "classNameIncludeFilter": "",
+    "methodNameExcludeFilter": "",
+    "methodNameIncludeFilter": "",
+    "hideMappings": false,
+    "hideDataStructures": false,
+    "hidePrivateMethods": true,
+    "hideInterfaceCalls": true, // indirection: implementation -> interface (is hidden) -> implementation
+    "onlyShowApplicationEntryPoints": false, // root node is included
+    "useMethodCallsForStructureDiagram": "ForwardOnly" // ForwardOnly, BothDirections, No
+  },
+  "details": {
+    "aggregation": "GroupByClass", // ByClass, GroupByClass, None
+    "showMethodParametersTypes": false,
+    "showMethodParametersNames": false,
+    "showMethodReturnType": false,
+    "showPackageLevels": 2,
+    "showCallOrder": false,
+    "edgeMode": "MethodsOnly", // TypesOnly, MethodsOnly, TypesAndMethods, MethodsAndDirectTypeUsage
+    "showDetailedClassStructure": false
+  },
+  "rootClass": "s.praveen.cms.controller.StudentMgmtController",
+  "extensionCallbackMethod": "" // qualified.class.name#methodName - signature: public static String method(String)
+}
+diagram meta data end '/
+
+
+
+digraph g {
+    rankdir="LR"
+    splines=polyline
+    
+
+'nodes 
+subgraph cluster_321882441 { 
+   	label=praveen
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+   
+   subgraph cluster_1915834990 { 
+   	label=cms
+	labeljust=l
+	fillcolor="#d8d8d8"
+	style=filled
+   
+   subgraph cluster_2092498967 { 
+   	label=StudentRequest
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   StudentRequest1044045465XXXstudentName0[
+	label="+ studentName()"
+	style=filled
+	fillcolor=white
+	tooltip="StudentRequest
+
+null"
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_2103373789 { 
+   	label=StudentMgmtController
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   StudentMgmtController1177992531XXXupdateStudentById1720933148[
+	label="+ updateStudentById()"
+	style=filled
+	fillcolor=white
+	tooltip="StudentMgmtController
+
+&#10;  Update student by id response entity.&#10; &#10;  @param id the id&#10;  @param request the request&#10;  @return the response entity&#10; "
+	penwidth=4
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_333075799 { 
+   	label=StudentMgmtServiceImpl
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   StudentMgmtServiceImpl105350576XXXselectStudentById3327612[
+	label="+ selectStudentById()"
+	style=filled
+	fillcolor=white
+	tooltip="StudentMgmtServiceImpl
+
+&#10;  Select student by id student.&#10; &#10;  @param id the id&#10;  @return the student&#10;  @throws EnityNotFoundException the enity not found exception&#10; "
+	fontcolor=darkgreen
+];
+
+StudentMgmtServiceImpl105350576XXXupdateStudent1720933148[
+	label="+ updateStudent()"
+	style=filled
+	fillcolor=white
+	tooltip="StudentMgmtServiceImpl
+
+&#10;  Update student student.&#10; &#10;  @param id the id&#10;  @param request the request&#10;  @return the student&#10;  @throws EnityNotFoundException the enity not found exception&#10; "
+	fontcolor=darkgreen
+];
+} 
+} 
+} 
+
+'edges    
+StudentMgmtController1177992531XXXupdateStudentById1720933148 -> StudentMgmtServiceImpl105350576XXXupdateStudent1720933148;
+StudentMgmtServiceImpl105350576XXXupdateStudent1720933148 -> StudentMgmtServiceImpl105350576XXXselectStudentById3327612;
+StudentMgmtServiceImpl105350576XXXupdateStudent1720933148 -> StudentRequest1044045465XXXstudentName0;
+    
+}
+@enduml

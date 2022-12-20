@@ -1,0 +1,158 @@
+@startuml
+
+/' diagram meta data start
+config=CallConfiguration;
+{
+  "rootMethod": "s.praveen.cms.controller.CourseMgmtController#getCoursesByStudentId(long)",
+  "projectClassification": {
+    "searchMode": "OpenProject", // OpenProject, AllProjects
+    "includedProjects": "",
+    "pathEndKeywords": "*.impl",
+    "isClientPath": "",
+    "isClientName": "",
+    "isTestPath": "",
+    "isTestName": "",
+    "isMappingPath": "",
+    "isMappingName": "",
+    "isDataAccessPath": "",
+    "isDataAccessName": "",
+    "isDataStructurePath": "",
+    "isDataStructureName": "",
+    "isInterfaceStructuresPath": "",
+    "isInterfaceStructuresName": "",
+    "isEntryPointPath": "",
+    "isEntryPointName": "",
+    "treatFinalFieldsAsMandatory": false
+  },
+  "graphRestriction": {
+    "classPackageExcludeFilter": "",
+    "classPackageIncludeFilter": "",
+    "classNameExcludeFilter": "",
+    "classNameIncludeFilter": "",
+    "methodNameExcludeFilter": "",
+    "methodNameIncludeFilter": "",
+    "removeByInheritance": "", // inheritance/annotation based filtering is done in a second step
+    "removeByAnnotation": "",
+    "removeByClassPackage": "", // cleanup the graph after inheritance/annotation based filtering is done
+    "removeByClassName": "",
+    "cutMappings": false,
+    "cutEnum": true,
+    "cutTests": true,
+    "cutClient": true,
+    "cutDataAccess": true,
+    "cutInterfaceStructures": true,
+    "cutDataStructures": true,
+    "cutGetterAndSetter": true,
+    "cutConstructors": true
+  },
+  "graphTraversal": {
+    "forwardDepth": 3,
+    "backwardDepth": 3,
+    "classPackageExcludeFilter": "",
+    "classPackageIncludeFilter": "",
+    "classNameExcludeFilter": "",
+    "classNameIncludeFilter": "",
+    "methodNameExcludeFilter": "",
+    "methodNameIncludeFilter": "",
+    "hideMappings": false,
+    "hideDataStructures": false,
+    "hidePrivateMethods": true,
+    "hideInterfaceCalls": true, // indirection: implementation -> interface (is hidden) -> implementation
+    "onlyShowApplicationEntryPoints": false, // root node is included
+    "useMethodCallsForStructureDiagram": "ForwardOnly" // ForwardOnly, BothDirections, No
+  },
+  "details": {
+    "aggregation": "GroupByClass", // ByClass, GroupByClass, None
+    "showMethodParametersTypes": false,
+    "showMethodParametersNames": false,
+    "showMethodReturnType": false,
+    "showPackageLevels": 2,
+    "showCallOrder": false,
+    "edgeMode": "MethodsOnly", // TypesOnly, MethodsOnly, TypesAndMethods, MethodsAndDirectTypeUsage
+    "showDetailedClassStructure": false
+  },
+  "rootClass": "s.praveen.cms.controller.CourseMgmtController",
+  "extensionCallbackMethod": "" // qualified.class.name#methodName - signature: public static String method(String)
+}
+diagram meta data end '/
+
+
+
+digraph g {
+    rankdir="LR"
+    splines=polyline
+    
+
+'nodes 
+subgraph cluster_321882441 { 
+   	label=praveen
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+   
+   subgraph cluster_1915834990 { 
+   	label=cms
+	labeljust=l
+	fillcolor="#d8d8d8"
+	style=filled
+   
+   subgraph cluster_1503865723 { 
+   	label=CourseMgmtServiceImpl
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   CourseMgmtServiceImpl105350576XXXgetCoursesByStudentId3327612[
+	label="+ getCoursesByStudentId()"
+	style=filled
+	fillcolor=white
+	tooltip="CourseMgmtServiceImpl
+
+&#10;  Gets courses by student id.&#10; &#10;  @param studentId the student id&#10;  @return the courses by student id&#10; "
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_189740563 { 
+   	label=CourseMgmtController
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   CourseMgmtController1177992531XXXgetCoursesByStudentId3327612[
+	label="+ getCoursesByStudentId()"
+	style=filled
+	fillcolor=white
+	tooltip="CourseMgmtController
+
+&#10;  Gets courses by student id.&#10; &#10;  @param studentId the student id&#10;  @return the courses by student id&#10; "
+	penwidth=4
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_195806399 { 
+   	label=CourseRegistartionServiceImpl
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   CourseRegistartionServiceImpl105350576XXXgetCourseIdsByStudentId3327612[
+	label="+ getCourseIdsByStudentId()"
+	style=filled
+	fillcolor=white
+	tooltip="CourseRegistartionServiceImpl
+
+&#10;  Gets course ids by student id.&#10; &#10;  @param studentId the student id&#10;  @return the course ids by student id&#10; "
+	fontcolor=darkgreen
+];
+} 
+} 
+} 
+
+'edges    
+CourseMgmtController1177992531XXXgetCoursesByStudentId3327612 -> CourseMgmtServiceImpl105350576XXXgetCoursesByStudentId3327612;
+CourseMgmtServiceImpl105350576XXXgetCoursesByStudentId3327612 -> CourseRegistartionServiceImpl105350576XXXgetCourseIdsByStudentId3327612;
+    
+}
+@enduml
